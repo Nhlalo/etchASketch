@@ -1,0 +1,132 @@
+html{
+  font-size: 62.5%;
+  box-sizing:border-box;
+  height:100%;
+}
+*, *::before, *::after{
+  box-sizing: inherit;
+}
+body{
+  margin:0;
+  padding:0;
+  font-size:1.6rem;
+  display: flex;
+  flex-direction: column;
+  min-height:100%;
+  color: white;
+  background-image: linear-gradient(blue 40%, black 50%, blue 90%);
+  
+}
+.mainContainer{
+  width:90%;
+  margin-left:auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center
+}
+h1{
+  text-align: center;
+}
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.gridLines button{
+  display: block;
+  margin-top:1rem;
+  
+}
+
+.container{
+  width:46rem;
+  height: 46rem;
+  display: grid;
+  background-color: white;
+  margin: 2rem;
+ 
+}
+.red{
+  border: 0.1rem solid red;
+}
+.styleDivs{
+  border: 0.1rem solid black;
+}
+button{
+  background: white;
+  color: blue;
+  
+}
+footer{
+  margin-top:auto;
+  text-align: center;
+}
+
+@media(max-width: 630px){
+  main{
+    font-size: 1.3rem;
+  }
+  
+  #textInput{
+   
+    font-size: 1rem;
+   
+  }
+  .container{
+    width:30rem;
+    height: 30rem;
+  }
+  button{
+    width: 5rem;
+    font-size: 1rem;
+  }
+}
+@media(max-width: 450px){
+  main{
+    font-size: 1.2rem;
+  }
+  
+  
+ 
+  .container{
+    width:20rem;
+    height: 20rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left:1rem;
+    margin-right:1rem;
+    
+  }
+  button{
+    width: 3rem;
+    font-size: 1rem;
+    padding: 0;
+  }
+  .btnAddGrid{
+    font-size: 0.8rem;
+    width: 3.5rem;
+  }
+ 
+  .btnRemoveGrid{
+    font-size: 0.8rem;
+    width: 4rem;
+  }
+ 
+  #textInput{
+    width: 11rem;
+    font-size: 1rem;
+  }
+}
