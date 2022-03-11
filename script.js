@@ -45,6 +45,9 @@ function styleGray(){
   const box = document.querySelectorAll('.squareBox');
   document.getElementById('gray').addEventListener('click',() => {
     box.forEach(squareBox => {
+      squareBox.addEventListener('click',function(){
+        squareBox.style.background = 'gray'
+      })
       squareBox.addEventListener('mouseover',function(){
         squareBox.style.background = 'gray'
       })
@@ -59,6 +62,9 @@ function styleBlack(){
       squareBox.addEventListener('mouseover',function(){
         squareBox.style.background = 'black'
       })
+      squareBox.addEventListener('click',function(){
+        squareBox.style.background = 'black'
+      })
     })
   })
 }
@@ -70,6 +76,9 @@ function styleYellow(){
       squareBox.addEventListener('mouseover',function(){
         squareBox.style.background = 'yellow'
       })
+      squareBox.addEventListener('click',function(){
+        squareBox.style.background = 'yellow'
+      })
     })
   })
 }
@@ -79,6 +88,12 @@ function styleRGB(){
   document.getElementById('rgb').addEventListener('click',() => {
     box.forEach(squareBox => {
       squareBox.addEventListener('mouseover',function(){
+        let red = Math.floor(Math.random() * (255 + 1));
+        let blue = Math.floor(Math.random() * (255 + 1));
+        let green = Math.floor(Math.random() * (255 + 1));
+        squareBox.style.background = `rgb(${red},${blue},${green})`
+      })
+      squareBox.addEventListener('click',function(){
         let red = Math.floor(Math.random() * (255 + 1));
         let blue = Math.floor(Math.random() * (255 + 1));
         let green = Math.floor(Math.random() * (255 + 1));
@@ -142,7 +157,7 @@ document.querySelector('.btnReset').addEventListener('click',reload)
 function eraser(){
   const box = document.querySelectorAll('.squareBox');
     box.forEach(squareBox => {
-      squareBox.addEventListener('click',function(){
+      squareBox.addEventListener('dblclick',function(){
         squareBox.style.background = ''
       })
     })
