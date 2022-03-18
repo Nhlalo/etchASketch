@@ -39,18 +39,24 @@ section{
   justify-content: center;
   align-items: center;
 }
-.section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-}
 .gridLines button{
   display: block;
   margin-top:1rem;
   
 }
-
+.section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#grid{
+  position: relative;
+  bottom: 0.8rem;
+}
+span{
+  position: relative;
+  bottom: 0.8rem;
+}
 .container{
   width:46rem;
   height: 46rem;
@@ -59,9 +65,6 @@ section{
   margin: 2rem;
  
 }
-.red{
-  border: 0.1rem solid red;
-}
 .styleDivs{
   border: 0.1rem solid black;
 }
@@ -69,6 +72,21 @@ button{
   background: white;
   color: blue;
   
+}
+.color button{
+  position: relative;
+  bottom: 0.6rem;
+
+}
+.color input{
+  position: relative;
+  bottom: 0.1rem;
+}
+.btnReset{
+  margin-left: 1rem;
+  position: relative;
+  bottom: 0.8rem;
+
 }
 footer{
   margin-top:auto;
@@ -79,12 +97,6 @@ footer{
   main{
     font-size: 1.3rem;
   }
-  
-  #textInput{
-   
-    font-size: 1rem;
-   
-  }
   .container{
     width:30rem;
     height: 30rem;
@@ -94,16 +106,17 @@ footer{
     font-size: 1rem;
   }
 }
+
 @media(max-width: 450px){
   main{
     font-size: 1.2rem;
   }
-  
-  
- 
+  .styleDivs{
+    border: 0.001rem solid black;
+  }
   .container{
-    width:20rem;
-    height: 20rem;
+    width:22rem;
+    height: 22rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
     margin-left:1rem;
@@ -125,8 +138,14 @@ footer{
     width: 4rem;
   }
  
-  #textInput{
+  #rangeInput{
     width: 11rem;
-    font-size: 1rem;
+
+  }
+  .color input{
+  
+    width: 2.5rem;
+   
+  
   }
 }

@@ -1,5 +1,5 @@
 const container = document.querySelector('.container');
-const textInput = document.querySelector('#textInput');
+const rangeInput = document.querySelector('#rangeInput');
 const btnResize = document.querySelector('#resize');
 
 function determineGridSize(x){
@@ -69,15 +69,21 @@ function styleBlack(){
   })
 }
 
-function styleYellow(){
+function styleColor(){
   const box = document.querySelectorAll('.squareBox');
-  document.getElementById('yellow').addEventListener('click',() => {
+  const color = document.querySelector('#color')
+ 
+  
+
+  color.addEventListener('input',(e) => {
     box.forEach(squareBox => {
+      const colorInput = color.value;
       squareBox.addEventListener('mouseover',function(){
-        squareBox.style.background = 'yellow'
+        squareBox.style.background = `${colorInput}`
       })
       squareBox.addEventListener('click',function(){
-        squareBox.style.background = 'yellow'
+        const colorInput = color.value;
+        squareBox.style.background = `${colorInput}`
       })
     })
   })
@@ -104,27 +110,19 @@ function styleRGB(){
 }
 
 function resizeGrid(){
-  let rowsColumns = textInput.value; 
-  textInput.value = '';
-
-
- if(rowsColumns < 0 || rowsColumns > 100 || rowsColumns.includes('.') || rowsColumns == '' ){
-  container.classList.add('red')
-  setTimeout(function(){  
-    container.classList.remove('red')}, 1000)
- }
- else{
+  let rowsColumns = rangeInput.value; 
+  document.querySelector('span').textContent = `${rowsColumns}`
    determineGridSize(rowsColumns)
    styleGray()
    styleBlack()
-   styleYellow()
+   styleColor()
    styleRGB()
    removeGridLines()
    addGridLines()
    eraser()
- }
+ 
 }
-btnResize.addEventListener('click',resizeGrid)
+rangeInput.addEventListener('click',resizeGrid)
 
 function determineDefault(x){
   reset();
@@ -134,12 +132,13 @@ for(let i = 0; i < (256) ; i++){
   newDivs.classList.add('squareBox')
   newDivs.classList.add('styleDivs')
 }
-
+document.querySelector('span').textContent = '16'
+rangeInput.value = 16
 container.style.gridTemplateRows = `repeat(16,minmax(1px,1fr))`;
 container.style.gridTemplateColumns= `repeat(16,minmax(1px,1fr))`;
 styleGray()
 styleBlack()
-styleYellow()
+styleColor()
 styleRGB()
 removeGridLines()
 addGridLines()
@@ -163,8 +162,4 @@ function eraser(){
     })
 }
 
-window.addEventListener('keydown',e => {
-  if(e.key === 'Enter'){
-    resizeGrid()
-  }
-})
+
