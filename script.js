@@ -72,10 +72,7 @@ function styleBlack(){
 function styleColor(){
   const box = document.querySelectorAll('.squareBox');
   const color = document.querySelector('#color')
- 
-  
-
-  color.addEventListener('input',(e) => {
+  color.addEventListener('change',(e) => {
     box.forEach(squareBox => {
       const colorInput = color.value;
       squareBox.addEventListener('mouseover',function(){
