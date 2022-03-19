@@ -119,7 +119,7 @@ function resizeGrid(){
    eraser()
  
 }
-rangeInput.addEventListener('click',resizeGrid)
+rangeInput.addEventListener('input',resizeGrid);
 
 function determineDefault(x){
   reset();
